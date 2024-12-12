@@ -1,5 +1,13 @@
 # TaskDASH
 
+todolist_app/
+│
+├── main.py           # Main entry point to run the app
+├── calendar_api.py   # Handles Google Calendar API interactions
+├── task_manager.py   # Manages task CRUD (Create, Read, Update, Delete) operations
+└── ui.py             # Contains the Tkinter UI code and layout
+
+
 # 📝 **To-Do List App with Google Calendar Integration**
 
 ## 🚀 **Project Overview**
@@ -24,7 +32,6 @@ This app is built using **Python** with the **Tkinter** library for the user int
 - **Python**: Programming language
 - **Tkinter**: GUI framework for the user interface
 - **Google Calendar API**: To integrate task reminders
-- **Pickle**: For task data storage
 - **datetime**: For managing task due dates
 
 ## 🎯 **How It Works**
@@ -45,3 +52,5 @@ To run this project locally, you’ll need:
 2. **Google API client**: Install with the following command:
    ```bash
    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+3 **Running on the Command Line**: python main.py
+
