@@ -1,14 +1,18 @@
 # TaskDASH
 
-todolist_app/
-│
-├── main.py           # Main entry point to run the app
-├── calendar_api.py   # Handles Google Calendar API interactions
-├── task_manager.py   # Manages task CRUD (Create, Read, Update, Delete) operations
-└── ui.py             # Contains the Tkinter UI code and layout
-
-
 # 📝 **To-Do List App with Google Calendar Integration**
+
+## 📂 **Project Structure**
+
+The project is organized into several files for modularity:
+
+### **Description of Files**:
+
+- **`main.py`**: This is the main entry point to run the app. It initializes the Tkinter UI and ties everything together.
+- **`calendar_api.py`**: This file manages the Google Calendar API interactions, including authentication and adding tasks to Google Calendar with reminders.
+- **`task_manager.py`**: This file contains the logic for managing tasks such as adding, deleting, sorting, and saving tasks to a JSON file.
+- **`ui.py`**: This file contains the graphical user interface code, which is built using Tkinter. It handles the interaction between the user and the app.
+
 
 ## 🚀 **Project Overview**
 
