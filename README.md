@@ -52,5 +52,6 @@ To run this project locally, you’ll need:
 2. **Google API client**: Install with the following command:
    ```bash
    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-3 **Running on the Command Line**: python main.py
+3 **Running on the Command Line**:  
+```python main.py ```
 
