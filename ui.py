@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from task_manager import load_tasks, save_tasks, add_task_to_list, delete_task_from_list, sort_tasks_by_priority
+from task_manager import *
 from calendar_api import authenticate_google, add_task_to_calendar
 
 
@@ -10,10 +10,11 @@ def create_ui():
     def refresh_task_list():
         #listbox to view all tasks
         tasks_listbox.delete(0, tk.END)
-        tasks = sort_tasks_by_priority(tasks)
-        for task in tasks:
+        sorted_tasks = sort_tasks_by_priority(tasks)
+        print(sorted_tasks)
+        for task in sorted_tasks:
             #iterating to insert into listbox
-            tasks_listbox.insert(tk.END, f"{task['title']} (Priority {task['priority']}) - Due: {task['due_date']}")
+            tasks_listbox.insert(tk.END,f"{task['title']} (Priority{task['priority']}) -Due: {task['due_date']}")
 
     def add_task():
         title = task_title_entry.get()
@@ -27,16 +28,20 @@ def create_ui():
             messagebox.showwarning("Input Error", "Please provide all details.")
 
     def delete_task():
-        # could possibly be an index error here
-        selected_index = tasks_listbox.curselection()[0]
-        delete_task_from_list(tasks, selected_index)
-        refresh_task_list()
+        # delete task w/ check for index
+        try:
+            selected_index = tasks_listbox.curselection()[0]
+            delete_task_from_list(tasks, selected_index)
+            refresh_task_list()  #refresh after deletion
+        except IndexError:
+            messagebox.showwarning("Selection Error", "Please select a task to delete.")
+
         
 
     root = tk.Tk()
     root.title("To-Do List App")
-
     tk.Label(root, text="Task Title").pack()
+
     task_title_entry = tk.Entry(root)
     task_title_entry.pack()
 
@@ -57,5 +62,5 @@ def create_ui():
     tasks_listbox = tk.Listbox(root, width=50, height=15)
     tasks_listbox.pack()
 
-    refres_task_list()
+    refresh_task_list()
     root.mainloop()
