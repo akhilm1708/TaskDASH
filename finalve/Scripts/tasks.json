@@ -4,5 +4,11 @@
         "priority": 2,
         "due_date": "2024-12-15",
         "completed": false
+    },
+    {
+        "title": "Do Dishes",
+        "priority": 2,
+        "due_date": "2024-12-15",
+        "completed": false
     }
 ]
